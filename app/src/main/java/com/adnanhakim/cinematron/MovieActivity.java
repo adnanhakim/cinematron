@@ -41,17 +41,15 @@ public class MovieActivity extends AppCompatActivity {
     // Url is base url + movie id + remaining url + api key
     private final String BASE_URL = "https://api.themoviedb.org/3/movie/";
     private final String REMAINING_URL = "?api_key=";
-    private final String API_KEY = "7f1c5b6bcdc0417095c1df13c485f647";
+    private final String API_KEY = BuildConfig.API_KEY;
     private String URL;
     private String BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
     private String posterURL, backdropURL;
 
-    // https://api.themoviedb.org/3/movie/299536/credits?api_key=7f1c5b6bcdc0417095c1df13c485f647
     // Url for cast is base url + movie id + remaining cast url + api key
     private final String REMAINING_CAST_URL = "/credits?api_key=";
 
-    // http://www.omdbapi.com/?i=tt3896198&apikey=f080a952
-    private final String OMDB_API = "&apikey=f080a952";
+    private final String OMDB_API = "&apikey=" + BuildConfig.OMDB_API;
     private final String OMDB_URL = "http://www.omdbapi.com/?i=";
     private String imdbId, imdbRating, rottenTomatoes, metacritic;
 

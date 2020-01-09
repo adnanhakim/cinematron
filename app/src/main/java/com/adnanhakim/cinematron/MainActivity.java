@@ -33,7 +33,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static String API_KEY = "7f1c5b6bcdc0417095c1df13c485f647";
+    public static String API_KEY = BuildConfig.API_KEY;
     public final String BASE_URL = "https://api.themoviedb.org/3";
     public final String REMAINING_URL = "/day?api_key=";
     public final String PAGE_URL = "&page=";
@@ -215,9 +215,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void searchMovie(String movieText) {
         // Search query
-        // https://api.themoviedb.org/3/search/movie?api_key=7f1c5b6bcdc0417095c1df13c485f647&language=en-US&query=mission%20impossible&page=1&include_adult=false
-        // Base url + /search/movie?api_key= + api key + &query= + query + &page=1
-        // Every space must be replaced by %20
         searchItems = new ArrayList<>();
         String query = movieText.replace(" ", "%20");
         String url = BASE_URL + "/search/movie?api_key=" + API_KEY + "&query=" + query + "&page=1";
