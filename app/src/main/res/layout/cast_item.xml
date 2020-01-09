@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/ivCastImage"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:background="@color/colorPlatinum" />
+
+    <TextView
+        android:id="@+id/tvCastCharacter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivCastImage"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:textColor="@color/colorBlack"
+        android:fontFamily="@font/coolvetica"
+        android:text="Character"/>
+
+    <TextView
+        android:id="@+id/tvCastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:layout_below="@id/tvCastCharacter"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/productsans"
+        android:text="Name"/>
+
+</RelativeLayout>

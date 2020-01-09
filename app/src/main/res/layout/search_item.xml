@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/ivSearchImage"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:background="@color/colorPlatinum" />
+
+        <TextView
+            android:id="@+id/tvSearchTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/ivSearchImage"
+            android:fontFamily="@font/coolvetica"
+            android:text="Movie title"
+            android:textColor="@color/colorBlack"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/tvSearchYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvSearchTitle"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/ivSearchImage"
+            android:fontFamily="@font/keepcalm"
+            android:text="Movie title"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

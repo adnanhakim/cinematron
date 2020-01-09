@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fcfcfc"
+    tools:context=".MovieActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarMovie"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/colorAccent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarMovie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            app:contentScrim="@color/colorPrimaryDark"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:title="@string/app_name">
+
+            <ImageView
+                android:id="@+id/ivDetailsBackDrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarMovie"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedSVDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/tvDetailsStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/coolveticafont"
+                android:text="Status"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeDetailsInformation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDetailsStatus">
+
+                <ImageView
+                    android:id="@+id/ivDetailsPoster"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:background="@color/colorPlatinum" />
+
+                <TextView
+                    android:id="@+id/tvDetailsOverview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/ivDetailsPoster"
+                    android:fontFamily="@font/productsans"
+                    android:text="overview"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeDetailsRatings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeDetailsInformation"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="30dp">
+
+                <TextView
+                    android:id="@+id/tvDetailsImdb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawableLeft="@drawable/ic_star"
+                    android:fontFamily="@font/keepcalm"
+                    android:text="8.8"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvDetailsRottenTomatoes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/keepcalm"
+                    android:text="88%"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvDetailsMetacritic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorBlack"
+                    android:fontFamily="@font/keepcalm"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="88"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvDetailsTagline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativeDetailsRatings"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/coolvetica"
+                android:gravity="center"
+                android:text="Tagline"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tvDetailsGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDetailsTagline"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/productsans"
+                android:text="Genre"
+                android:textColor="@color/colorBlack"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tvDetailsReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDetailsGenre"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/productsans"
+                android:text="2018-01-01"
+                android:textColor="@color/colorBlack"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tvDetailsRuntime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDetailsReleaseDate"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/productsans"
+                android:text="96 minutes"
+                android:textColor="@color/colorBlack"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tvDetailsCast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDetailsRuntime"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/coolvetica"
+                android:text="Cast"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tvDetailsProducer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDetailsCast"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/productsans"
+                android:text="Producer"
+                android:textColor="@color/colorBlack"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tvDetailsDirector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDetailsProducer"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/productsans"
+                android:text="Director"
+                android:textColor="@color/colorBlack"
+                android:textSize="17dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerCast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDetailsDirector"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
